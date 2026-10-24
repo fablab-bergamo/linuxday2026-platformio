@@ -1,0 +1,13 @@
+system,source_csv,tool,scenario,repetitions,median_seconds,min_seconds,max_seconds
+Linux,results.csv,arduino,clean,3,28.110960,27.252382,28.159258
+Linux,results.csv,platformio,clean,3,14.643099,14.404238,15.527326
+Linux,results.csv,arduino,unchanged,3,10.923417,10.906305,11.075484
+Linux,results.csv,platformio,unchanged,3,5.488600,5.414091,5.529492
+Linux,results.csv,arduino,small_edit,3,11.292681,11.273228,11.474810
+Linux,results.csv,platformio,small_edit,3,8.882202,8.815302,8.919418
+Windows,results-windows.csv,arduino,clean,3,64.783232,49.715415,69.269597
+Windows,results-windows.csv,platformio,clean,3,28.614383,28.227346,29.009893
+Windows,results-windows.csv,arduino,unchanged,3,15.868425,15.629608,16.775857
+Windows,results-windows.csv,platformio,unchanged,3,5.883192,5.307696,6.462289
+Windows,results-windows.csv,arduino,small_edit,3,14.888683,14.876810,16.270129
+Windows,results-windows.csv,platformio,small_edit,3,9.771203,9.204679,10.996884

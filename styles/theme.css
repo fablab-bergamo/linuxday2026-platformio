@@ -1,0 +1,31 @@
+.slidev-layout {
+  background: #faf9f3 url('/images/sfondo-circuito.svg') center / cover no-repeat;
+  color: #203b3b;
+  padding: 2.8rem 3.3rem;
+  border-top: 5px solid #17675f;
+}
+.slidev-layout h1 { color: #154f4b; font-weight: 650; letter-spacing: -.025em; }
+.slidev-layout h1 + p { opacity: .85; }
+.slidev-layout a { color: #17675f; }
+.slidev-layout li::marker { color: #b78a13; }
+.slidev-layout th { color: #154f4b; background: #e8eeE7; }
+.slidev-layout td, .slidev-layout th { border-color: #d1ddd3; }
+.slidev-layout code { color: #15534d; background: #e5eee6; }
+.visual-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 1.5rem; align-items: center; }
+.visual-grid > img { width: 100%; max-height: 290px; object-fit: contain; }
+.visual-grid li { margin-top: .6rem; margin-bottom: .6rem; }
+.visual-grid p { margin-top: .65rem; margin-bottom: .65rem; }
+.visual-caption { font-size: 14px; color: #58736b; text-align: center; }
+.brand-row { display:flex; align-items:center; justify-content:center; gap:2.8rem; margin-top:1.8rem; }
+.brand-row img { object-fit:contain; }
+
+.dipendenze-code pre { font-size: 12px !important; line-height: 1.45 !important; }
+.benchmark-note { margin-top: 1.2rem; font-size: 15px; line-height: 1.5; color: #47645e; }
+
+.confronto-editor table { font-size: 18px; line-height: 1.45; }
+.confronto-editor td, .confronto-editor th { padding: .55rem .6rem; }
+
+/* Vincoli espliciti per immagini raster di grandi dimensioni. */
+.cyd-photo { display: block; width: 100%; height: 290px; max-width: 100%; object-fit: contain; border-radius: 8px; }
+.visual-grid > div { min-width: 0; }
+.ide-screenshot { display: block; width: 100%; height: 340px; max-width: 100%; object-fit: contain; margin: 12px auto; }

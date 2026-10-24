@@ -1,0 +1,59 @@
+name: Compila gli esempi ESP32
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  benchmark-script:
+    name: Verifica lo script benchmark (${{ matrix.os }})
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Verifica il protocollo con strumenti simulati
+        run: python -m unittest discover -s benchmarks -p "test_*.py"
+  platformio:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Installa PlatformIO
+        run: pip install platformio==6.2.0
+      - name: Compila la Sfera di cristallo
+        run: pio run --project-dir examples/platformio-single-board -e cyd
+  arduino:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Installa Arduino CLI 1.2.2
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cli_dir="$RUNNER_TEMP/arduino-cli"
+          mkdir -p "$cli_dir"
+          gh release download v1.2.2 --repo arduino/arduino-cli --dir "$cli_dir" \
+            --pattern arduino-cli_1.2.2_Linux_64bit.tar.gz --pattern 1.2.2-checksums.txt
+          cd "$cli_dir"
+          sha256sum --check --ignore-missing 1.2.2-checksums.txt
+          tar -xzf arduino-cli_1.2.2_Linux_64bit.tar.gz arduino-cli
+          echo "$cli_dir" >> "$GITHUB_PATH"
+          ./arduino-cli version
+      - name: Installa il core ESP32
+        run: |
+          arduino-cli core update-index --additional-urls https://espressif.github.io/arduino-esp32/package_esp32_index.json
+          arduino-cli core install esp32:esp32@2.0.14 --additional-urls https://espressif.github.io/arduino-esp32/package_esp32_index.json
+      - name: Installa le librerie
+        run: |
+          arduino-cli lib update-index
+          arduino-cli lib install "Adafruit ILI9341@1.6.1" "Adafruit GFX Library@1.11.11" "Adafruit BusIO@1.16.2" "XPT2046_Touchscreen@1.4"
+      - name: Compila lo sketch Arduino
+        run: arduino-cli compile --fqbn esp32:esp32:esp32 examples/arduino-original/SferaDiCristallo

@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.slidev/
+.cache/
+.pio/
+slides-export.pdf
+slides-export/
+*.log
+.DS_Store
+.local/
+__pycache__/
+*.pyc
