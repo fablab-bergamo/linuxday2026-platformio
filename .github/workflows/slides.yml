@@ -29,6 +29,8 @@ jobs:
       - name: Install Chromium and system dependencies
         run: npx playwright install --with-deps chromium
       - run: npm run build
+      - name: Verifica indice e navigazione nel sottopercorso Pages
+        run: node scripts/check-navigation.mjs
       - run: npm run export
       - uses: actions/upload-artifact@v6
         with:

@@ -4,6 +4,7 @@ title: Da Arduino IDE a PlatformIO
 info: Linux Day 2026 · Bergamo
 class: text-center
 transition: none
+routerMode: hash
 colorSchema: light
 aspectRatio: 16/9
 fonts:

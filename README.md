@@ -52,7 +52,7 @@ npm run export
 Il sito HTML viene generato in `dist/`; il PDF in `slides-export.pdf`. Entrambi sono esclusi da Git.
 L’esportazione usa Playwright Chromium. Su Linux, eventuali dipendenze di sistema mancanti possono essere installate con `npx playwright install --with-deps chromium`, che può richiedere privilegi di amministratore.
 
-Per vedere il sito compilato, eseguire `python3 -m http.server 8080 --directory dist` e aprire http://localhost:8080. La base relativa permette di ospitare il sito anche in un sottopercorso.
+Per vedere il sito compilato, eseguire `python3 -m http.server 8080 --directory dist` e aprire http://localhost:8080. La base relativa permette di ospitare il sito anche in un sottopercorso. `routerMode: hash` mantiene la navigazione all’interno di quel percorso (ad esempio `/linuxday2026-platformio/#/5`): GitHub Pages non fornisce il fallback necessario alle rotte HTML5. Dopo modifiche alla pubblicazione, verificare su un server statico in un sottopercorso l’apertura dell’indice, la selezione touch di una slide e il ricaricamento del relativo URL.
 
 ## Verifiche e integrazione continua
 
