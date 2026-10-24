@@ -56,7 +56,7 @@ Per vedere il sito compilato, eseguire `python3 -m http.server 8080 --directory 
 
 ## Verifiche e integrazione continua
 
-GitHub Actions è configurato per compilare il sito, esportare il PDF e conservare entrambi come artefatti. Non pubblica il sito. Un secondo workflow compila entrambi gli esempi ESP32, con PlatformIO e Arduino CLI.
+GitHub Actions è configurato per compilare il sito, esportare il PDF e conservare entrambi come artefatti. Non pubblica il sito. Un secondo workflow compila gli esempi ESP32 e la variante animata `AI-example`, con PlatformIO e Arduino CLI.
 
 Prima dell’evento, controllare leggibilità e impaginazione di HTML e PDF. Installare dipendenze e Chromium in anticipo, quindi fare una prova senza connessione. Il caricamento remoto dei caratteri è disabilitato; il funzionamento offline deve ancora essere verificato.
 
@@ -66,6 +66,7 @@ Prima dell’evento, controllare leggibilità e impaginazione di HTML e PDF. Ins
 - `notes/outline.md`: scaletta e scelte didattiche.
 - `notes/sources.md`: fonti, attribuzioni e verifiche pendenti.
 - `examples/`: versioni Arduino IDE e PlatformIO, istruzioni CYD e prove su hardware.
+- `AI-example/`: variante animata già preparata per la dimostrazione con Codex in VSCodium.
 - `benchmarks/`: metodo, tabella, misure grezze e script per ripeterle.
 - `AGENTS.md`: istruzioni di lavoro per gli assistenti.
 

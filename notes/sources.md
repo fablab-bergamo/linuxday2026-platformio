@@ -104,13 +104,13 @@ Foto riprodotta senza modifiche nella slide hardware; mostra un test grafico e n
 
 Fonti primarie consultate il 24 ottobre 2026:
 
-- [Conversione manuale da ino a cpp](https://docs.platformio.org/en/latest/faq/ino-to-cpp.html): Arduino.h e dichiarazioni prima delle chiamate; riferimento per il caso AI preparato.
+- [Conversione manuale da ino a cpp](https://docs.platformio.org/en/latest/faq/ino-to-cpp.html): Arduino.h e dichiarazioni prima delle chiamate nel passaggio manuale a C++.
 - [Ambienti PlatformIO](https://docs.platformio.org/en/latest/projectconf/sections/env/index.html): impostazioni comuni in env, sezioni env:nome e selezione con -e.
 - [Opzioni di compilazione](https://docs.platformio.org/en/latest/projectconf/sections/env/options/build/build_flags.html) e [rimozione di opzioni](https://docs.platformio.org/en/latest/projectconf/sections/env/options/build/build_unflags.html): esempio opzionale dello standard C++, da verificare rispetto ai flag reali della piattaforma.
 - [Standard del linguaggio supportati da GCC](https://gcc.gnu.org/onlinedocs/gcc/Standards.html#C_002b_002b-Language): la disponibilità delle funzionalità dipende anche dalla versione del compilatore e dalla libreria standard.
 - [Guida PlatformIO per l’integrazione nell’editor](https://docs.platformio.org/en/latest/integration/ide/vscode.html): Project Tasks e flusso Build, Upload, Monitor.
 
-Il file multiambiente nelle slide è uno schema parziale, non un progetto compilato. Non configura una seconda scheda fisica. I frammenti dell’Oracolo sono importati direttamente da main.cpp. Il caso AI è un esercizio di dichiarazione anticipata, senza output inventati o dipendenze da un servizio specifico.
+I frammenti dell’Oracolo sono importati direttamente da main.cpp. La parte AI usa il prompt scelto dall’utente con Codex integrato in VSCodium per animare la sfera, compilare ed eseguire l’upload. Il risultato già modificato è conservato in `AI-example/`, copiato dal progetto locale `261024-134758-esp32dev`; provenienza e verifiche sono descritte nel relativo README. Non sono riportati log di generazione o risultati hardware inventati.
 
 ## Specifiche nella slide CYD
 

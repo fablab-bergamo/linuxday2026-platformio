@@ -554,41 +554,40 @@ layout: center
 class: text-center
 ---
 
-# Cinque minuti di AI, su un errore preciso
+# Cinque minuti di AI: animare l’Oracolo
 
-**Capire una migrazione · proporre una modifica · verificarla**
+**Codex integrato in VSCodium · modifica · compilazione · upload**
 
-Editor o CLI a scelta. Un aiuto facoltativo, utilizzabile anche con Arduino IDE.
+Dai due cerchi a una sfera animata e luccicante.
 
 <!--
-Blocco AI totale circa cinque minuti: uno per preparare l’errore, due per leggere
-la diagnosi e la modifica, due per compilare e discutere i limiti.
-Non ripetere la panoramica di strumenti dell’Arduino Day. Usare un assistente già
-configurato oppure raccontare il caso dalle slide se non disponibile.
-Non serve alcun servizio AI per compilare gli esempi o usare la presentazione.
+Blocco di circa cinque minuti: mostrare la versione di partenza, inviare il prompt,
+seguire le modifiche e la compilazione, quindi osservare il risultato sulla CYD.
+Usare Codex già configurato in VSCodium con accesso agli strumenti necessari.
+È un aiuto facoltativo: gli esempi si compilano anche senza servizi AI.
+Non ripetere la panoramica degli assistenti dell’Arduino Day.
 -->
 
 ---
 
-# Un errore tipico del passaggio a `.cpp`
+# Il prompt per Codex in VSCodium
 
-In una **copia di prova**, spostiamo `mostraMessaggio` sotto `loop()`.
+> voglio una sfera animata lucicante invece di due cerchi, compila e upload in autonomia
 
-```text
-error: 'mostraMessaggio' was not declared in this scope
-```
-
-Richiesta da dare all’assistente:
-
-> Ho migrato questo sketch da `.ino` a `.cpp`. Spiega il primo errore di compilazione e proponi la modifica minima. Mantieni pin, dipendenze e comportamento. Mostra il diff e il comando di verifica.
+- Partenza: copia di `examples/platformio-single-board/`
+- Risultato già preparato: `AI-example/`
+- Verifica sulla CYD: animazione, tocco e risposta
 
 <!--
-Caso didattico preparato, messaggio rappresentativo: non è il log di un errore
-presente nel progetto versionato. Fornire all’assistente main.cpp, platformio.ini
-e il log effettivo della build nella copia locale, evitando informazioni private.
-Per spostare la funzione selezionare l’intera definizione, dopo disegnaCornice,
-e collocarla dopo loop. Le chiamate in setup e loop precederanno la definizione.
-La compilazione deve mostrare il problema prima di chiedere la correzione.
+Mantenere il prompt nella formulazione scelta dall’utente, incluso «lucicante».
+Per la dimostrazione dal vivo lavorare su una copia del progetto iniziale;
+AI-example conserva separatamente il codice animato già modificato.
+Leggere il diff prodotto da Codex e osservare i comandi di build e upload.
+Il prompt richiede autonomia; l’esecuzione dipende da strumenti, permessi e
+collegamento della scheda disponibili nella sessione dell’editor.
+Verificare sul dispositivo che l’animazione prosegua, che il touch funzioni e
+che pressione prolungata, rilascio e nuovo tocco mantengano il comportamento.
+La sola compilazione non dimostra fluidità o correttezza su hardware.
 -->
 
 ---
