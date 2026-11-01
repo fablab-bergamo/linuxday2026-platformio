@@ -110,7 +110,7 @@ Fonti primarie consultate il 24 ottobre 2026:
 - [Standard del linguaggio supportati da GCC](https://gcc.gnu.org/onlinedocs/gcc/Standards.html#C_002b_002b-Language): la disponibilità delle funzionalità dipende anche dalla versione del compilatore e dalla libreria standard.
 - [Guida PlatformIO per l’integrazione nell’editor](https://docs.platformio.org/en/latest/integration/ide/vscode.html): Project Tasks e flusso Build, Upload, Monitor.
 
-I frammenti dell’Oracolo sono importati direttamente da main.cpp. La parte AI usa il prompt scelto dall’utente con Codex integrato in VSCodium per animare la sfera, compilare ed eseguire l’upload. Il risultato già modificato è conservato in `AI-example/`, copiato dal progetto locale `261024-134758-esp32dev`; provenienza e verifiche sono descritte nel relativo README. Non sono riportati log di generazione o risultati hardware inventati.
+I frammenti dell’Oracolo sono importati direttamente da main.cpp. La parte AI usa il prompt scelto dall’utente con Codex integrato in VSCodium per animare la sfera, compilare ed eseguire l’upload. Il risultato già modificato è conservato in `examples/AI-example/`, copiato dal progetto locale `261024-134758-esp32dev`; provenienza e verifiche sono descritte nel relativo README. Non sono riportati log di generazione o risultati hardware inventati.
 
 ## Specifiche nella slide CYD
 
@@ -120,3 +120,7 @@ I frammenti dell’Oracolo sono importati direttamente da main.cpp. La parte AI 
 ## Piattaforma, Core ed estensione
 
 La slide «Il progetto PlatformIO» distingue la piattaforma di sviluppo embedded, il motore PlatformIO Core utilizzabile da CLI e l’estensione PlatformIO IDE per l’interfaccia nell’editor. VSCodium è l’editor scelto per il talk. Riferimenti: [architettura e funzionalità](https://docs.platformio.org/en/latest/what-is-platformio.html) e [Core incluso nell’estensione](https://docs.platformio.org/en/latest/integration/ide/vscode.html#installation). La documentazione ufficiale dell’estensione non certifica il walkthrough su VSCodium: la verifica locale completa resta da eseguire.
+
+## Schermate dell’Oracolo in Wokwi
+
+Materiali forniti dall’utente il 1 novembre 2026: `public/images/sfera_cristallo.png` mostra la versione iniziale, `public/images/sfera.gif` la variante animata dopo la modifica AI. Le schermate mostrano la simulazione Wokwi, non una prova su hardware. `public/images/sfera-ai-pdf.png` è il fotogramma centrale della GIF, estratto per il PDF statico. L’interfaccia e il disegno della scheda Wokwi restano dei rispettivi titolari.

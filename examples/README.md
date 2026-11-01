@@ -4,6 +4,7 @@ Due progetti autonomi con lo stesso comportamento: tocca il display, attendi cir
 
 - [Versione Arduino IDE](arduino-original/README.md).
 - [Versione PlatformIO](platformio-single-board/README.md).
+- [Variante animata per la dimostrazione AI, con configurazione Wokwi locale](AI-example/README.md).
 - [Preparazione della CYD: librerie, installazione, pin e problemi su Linux](CYD.md).
 
 ## Scheda prevista

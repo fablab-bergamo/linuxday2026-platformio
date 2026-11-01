@@ -31,7 +31,7 @@ jobs:
       - name: Compila la Sfera di cristallo
         run: pio run --project-dir examples/platformio-single-board -e cyd
       - name: Compila la variante AI animata
-        run: pio run --project-dir AI-example -e esp32dev
+        run: pio run --project-dir examples/AI-example -e esp32dev
   arduino:
     runs-on: ubuntu-latest
     steps:

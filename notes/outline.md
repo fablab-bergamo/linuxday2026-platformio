@@ -58,7 +58,7 @@ Dopo dipendenze e benchmark, la dimostrazione segue queste tappe:
 2. Confrontare sketch e main.cpp: Arduino.h e dichiarazioni prima delle chiamate. Importare il codice reale nelle slide.
 3. Eseguire Build, Upload e Monitor da Project Tasks. Verificare tocco, attesa, rilascio e risposta sul dispositivo.
 4. Mostrare navigazione, diagnostica e standard C++: il supporto dipende da compilatore, librerie e framework.
-5. Cinque minuti di AI con Codex integrato in VSCodium. Prompt: «voglio una sfera animata lucicante invece di due cerchi, compila e upload in autonomia». Partire da una copia del progetto iniziale; il risultato già modificato è conservato in `AI-example/`. Leggere il diff, seguire compilazione e upload, verificare animazione e touch sulla CYD.
+5. Cinque minuti di AI con Codex integrato in VSCodium. Prompt: «voglio una sfera animata lucicante invece di due cerchi, compila e upload in autonomia». Partire da una copia del progetto iniziale; il risultato già modificato è conservato in `examples/AI-example/`. Leggere il diff, seguire compilazione e upload, verificare animazione e touch sulla CYD.
 6. Chiudere con checklist e risorse. Per problemi di upload e preparazione offline, consultare la documentazione del repository.
 
 Percorso da 30 minuti: sintetizzare storia e catalogo delle piattaforme, abbreviare il confronto degli editor. Nessuna nuova verifica hardware o offline è implicita nelle slide aggiunte.

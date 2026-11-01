@@ -59,7 +59,7 @@ Ispirato alla **Sfera di cristallo**, progetto 11 di *Arduino: Il Libro dei Prog
 - Stesso comportamento con Arduino IDE e PlatformIO
 
 </div>
-<img src="/images/oracolo.svg" alt="Illustrazione di una sfera di cristallo con un punto interrogativo" />
+<img src="/images/sfera_cristallo.png" alt="Simulazione Wokwi dell’Oracolo sulla CYD: sfera disegnata con due cerchi e risposta sul display" />
 </div>
 
 [Il Libro dei Progetti · riferimento sul sito del FabLab Bergamo](https://www.fablabbergamo.it/2026/02/19/arduino-per-principianti-libro-dei-progetti/)
@@ -142,6 +142,8 @@ class: confronto-editor
 | Interfaccia focalizzata sull’esperimento | File, ricerca, Git e terminale nello stesso spazio |
 | Poche scelte per partire rapidamente | Ambiente estensibile, con più configurazione iniziale |
 
+- **Estensioni di valore:** Wokwi per simulare schede e firmware direttamente in VS Code.
+
 <div class="benchmark-note">
 VSCodium è una distribuzione libera di Code - OSS. PlatformIO gestisce build e dipendenze.<br>
 Anche Arduino IDE 2 offre autocompletamento e debugging: il passaggio riguarda il flusso di lavoro.
@@ -156,6 +158,12 @@ un editor estensibile rende comodo gestire tutto nello stesso spazio.
 progetti hobbistici e supporta più file C/C++. Non presentarlo come limitato
 a script, né sostenere che tutti debbano abbandonarlo. Uno sketch è codice C++.
 Git si può usare con entrambi; VSCodium ne integra l’interfaccia nell’editor.
+Ricordare anche il valore dell’ecosistema di estensioni di VS Code: oltre a
+PlatformIO, strumenti come Wokwi permettono di simulare il firmware e interagire
+con una scheda virtuale direttamente nell’editor. Nel repository abbiamo la
+configurazione Wokwi della CYD sia per l’esempio iniziale sia per la variante
+animata. Disponibilità e compatibilità delle estensioni su VSCodium vanno
+verificate separatamente.
 Distinguere tre livelli: VSCodium è l’editor, PlatformIO gestisce compilazione,
 strumenti e dipendenze, Arduino resta il framework del nostro firmware.
 VSCodium distribuisce binari liberi MIT basati sui sorgenti Code - OSS,
@@ -574,14 +582,26 @@ Non ripetere la panoramica degli assistenti dell’Arduino Day.
 
 > voglio una sfera animata lucicante invece di due cerchi, compila e upload in autonomia
 
+<div class="visual-grid">
+<div>
+
 - Partenza: copia di `examples/platformio-single-board/`
-- Risultato già preparato: `AI-example/`
+- Risultato già preparato: `examples/AI-example/`
 - Verifica sulla CYD: animazione, tocco e risposta
+
+</div>
+<div>
+<img v-if="$slidev.nav.isPrintMode" src="/images/sfera-ai-pdf.png" alt="Fotogramma della sfera animata dopo la modifica AI, nella simulazione Wokwi" class="cyd-photo" />
+<img v-else src="/images/sfera.gif" alt="Animazione della sfera dopo la modifica AI, nella simulazione Wokwi" class="cyd-photo" />
+<p class="visual-caption">Risultato della modifica AI · simulazione Wokwi</p>
+</div>
+</div>
 
 <!--
 Mantenere il prompt nella formulazione scelta dall’utente, incluso «lucicante».
+La GIF mostra il risultato in Wokwi; nel PDF viene usato un fotogramma statico.
 Per la dimostrazione dal vivo lavorare su una copia del progetto iniziale;
-AI-example conserva separatamente il codice animato già modificato.
+examples/AI-example conserva separatamente il codice animato già modificato.
 Leggere il diff prodotto da Codex e osservare i comandi di build e upload.
 Il prompt richiede autonomia; l’esecuzione dipende da strumenti, permessi e
 collegamento della scheda disponibili nella sessione dell’editor.

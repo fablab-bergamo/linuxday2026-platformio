@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "author": "FabLab Bergamo",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-2432s028r",
+      "id": "cyd",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    ["cyd:TX", "$serialMonitor:RX", "", []],
+    ["cyd:RX", "$serialMonitor:TX", "", []]
+  ]
+}
