@@ -30,7 +30,7 @@ benchmarks/README.md               Measurement method, hardware, and versions
 benchmarks/results.csv             Recorded measurements
 notes/outline.md                   Narrative and timing
 notes/sources.md                   Technical references and asset attribution
-README.md                          Setup, authoring, building, and demo instructions
+README.md                          Obiettivi didattici, contenuti e materiali
 ```
 
 Create directories as needed rather than adding empty placeholders. Keep runnable examples as the source of truth for code shown in slides; use Slidev file imports where practical.
@@ -59,3 +59,43 @@ Create directories as needed rather than adding empty placeholders. Keep runnabl
 ## Licensing
 
 Use CC BY-SA 4.0 for original slide content and MIT for original example code, as proposed in the project discussion. Clearly document the scope of each license when adding license files. Preserve third-party licenses and attribution; use appropriately licensed assets. The authoring, build, and presentation workflow must remain usable without paid services or AI tools.
+
+## Guida operativa della presentazione
+
+### Installazione
+
+Usare Node.js 22, almeno versione 22.12.0. Se nvm è installato:
+
+```sh
+nvm use
+npm ci
+npm run dev
+```
+
+Aprire http://localhost:3030. Le modifiche vengono visualizzate automaticamente. La vista relatore è disponibile su http://localhost:3030/presenter.
+Separare le slide con `---` e scrivere le note del relatore nei commenti HTML.
+
+Le dipendenze sono installate e `package-lock.json` è incluso nel repository. Usare `npm ci` per riprodurre le versioni registrate: attualmente Slidev 52.6.0, tema predefinito 0.25.0 e Playwright Chromium 1.56.1.
+
+### Compilazione ed esportazione
+
+```sh
+npm run build
+npm run setup:browser
+npm run export
+```
+
+Il sito HTML viene generato in `dist/`; il PDF in `slides-export.pdf`. Entrambi sono esclusi da Git.
+L’esportazione usa Playwright Chromium. Su Linux, eventuali dipendenze di sistema mancanti possono essere installate con `npx playwright install --with-deps chromium`, che può richiedere privilegi di amministratore.
+
+Per vedere il sito compilato, eseguire `python3 -m http.server 8080 --directory dist` e aprire http://localhost:8080. La base relativa permette di ospitare il sito anche in un sottopercorso. `routerMode: hash` mantiene la navigazione all’interno di quel percorso (ad esempio `/linuxday2026-platformio/#/5`): GitHub Pages non fornisce il fallback necessario alle rotte HTML5. Dopo modifiche alla pubblicazione, verificare su un server statico in un sottopercorso l’apertura dell’indice, la selezione touch di una slide e il ricaricamento del relativo URL.
+
+### Verifiche e integrazione continua
+
+GitHub Actions è configurato per compilare il sito, esportare il PDF e conservare entrambi come artefatti. Sui push a `main` pubblica inoltre il sito con GitHub Pages. Un secondo workflow compila gli esempi ESP32 e la variante animata `examples/AI-example`, con PlatformIO e Arduino CLI.
+
+Prima dell’evento, controllare leggibilità e impaginazione di HTML e PDF. Installare dipendenze e Chromium in anticipo, quindi fare una prova senza connessione. Il caricamento remoto dei caratteri è disabilitato; il funzionamento offline deve ancora essere verificato.
+
+### Pubblicazione configurata
+
+La presentazione è disponibile su [GitHub Pages](https://fablab-bergamo.github.io/linuxday2026-platformio/). Il workflow `.github/workflows/slides.yml` compila HTML ed esporta il PDF; sui push al ramo `main` pubblica `dist/` con GitHub Pages. Le pull request eseguono solo le verifiche. Il PDF è scaricabile dagli artefatti del workflow. È possibile avviare il workflow anche manualmente da GitHub Actions. Nelle impostazioni della repository, Pages deve usare **GitHub Actions** come sorgente.
